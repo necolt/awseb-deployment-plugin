@@ -87,6 +87,11 @@ public class AWSEBDeploymentConfig implements Serializable {
   private boolean zeroDowntime;
 
   /**
+   * Skip Deploy
+   */
+  private boolean skipDeploy;
+
+  /**
    * Credentials
    */
   private AmazonWebServicesCredentials credentials;
@@ -110,6 +115,7 @@ public class AWSEBDeploymentConfig implements Serializable {
         r.r(this.getIncludes()),
         r.r(this.getExcludes()),
         this.isZeroDowntime(),
+        this.isSkipDeploy(),
         this.credentials
     );
   }

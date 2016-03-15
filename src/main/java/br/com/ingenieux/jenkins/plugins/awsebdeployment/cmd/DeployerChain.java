@@ -89,6 +89,8 @@ public class DeployerChain {
                 new DeployerCommand.CreateApplicationVersion()
         );
 
+        if (!c.deployerConfig.isSkipDeploy()) {
+
         if (c.deployerConfig.isZeroDowntime()) {
             commandList.add(new ZeroDowntime());
         } else {
@@ -102,7 +104,8 @@ public class DeployerChain {
         }
 
         commandList.add(new DeployerCommand.WaitForEnvironment(WaitFor.Both));
-
+        }
         commandList.add(new DeployerCommand.MarkAsSuccessful());
+        
     }
 }

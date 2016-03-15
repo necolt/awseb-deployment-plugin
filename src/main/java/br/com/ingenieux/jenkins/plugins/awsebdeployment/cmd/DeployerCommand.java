@@ -111,6 +111,7 @@ public class DeployerCommand implements Constants {
             setApplicationName(getDeployerConfig().getApplicationName());
             setVersionLabel(getDeployerConfig().getVersionLabelFormat());
             setEnvironmentName(getDeployerConfig().getEnvironmentName());
+            //setSkipDeploy(getDeployerConfig().getSkipDeploy());
 
             Validate.notEmpty(getEnvironmentName(), "Empty/blank environmentName parameter");
             Validate.notEmpty(getApplicationName(), "Empty/blank applicationName parameter");
